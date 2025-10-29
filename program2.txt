@@ -1,0 +1,206 @@
+
+Admin@DESKTOP-HGNLPEA MINGW64 ~ (master)
+$ cd D:
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d
+$ mkdir StudentA
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d
+$ git init
+Initialized empty Git repository in D:/.g
+it/
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d
+$ git clone https://github.com/Prasannakumar1/Thirdsemc.git
+Cloning into 'Thirdsemc'...
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), don
+e.
+remote: Compressing objects: 100% (4/4),
+done.
+remote: Total 8 (delta 1), reused 5 (delt
+a 1), pack-reused 0 (from 0)
+Receiving objects: 100% (8/8), done.
+Resolving deltas: 100% (1/1), done.
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d
+$ cd StudentA
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA
+$ git clone https://github.com/Prasannakumar1/Thirdsemc.git
+Cloning into 'Thirdsemc'...
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), don
+e.
+remote: Compressing objects: 100% (4/4),
+done.
+remote: Total 8 (delta 1), reused 5 (delt
+a 1), pack-reused 0 (from 0)
+Receiving objects: 100% (8/8), done.
+Resolving deltas: 100% (1/1), done.
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA
+$ ls
+Thirdsemc/
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA
+$ cd Thirdsemc/
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (main)
+$ git branch
+* main
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (main)
+$ git branch b1
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (main)
+$ git branch b2
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (main)
+$ git branch
+  b1
+  b2
+* main
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (main)
+$ git checkout b1
+Switched to branch 'b1'
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (b1)
+$ touch add2.c
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (b1)
+$ vi sub2.c
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (b1)
+$ git status
+On branch b1
+Untracked files:
+  (use "git add <file>..." to include in
+what will be committed)
+        add2.c
+        sub2.c
+
+nothing added to commit but untracked fil
+es present (use "git add" to track)
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (b1)
+$ git add .
+warning: in the working copy of 'sub2.c',
+ LF will be replaced by CRLF the next tim
+e Git touches it
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (b1)
+$ git status
+On branch b1
+Changes to be committed:
+  (use "git restore --staged <file>..." t
+o unstage)
+        new file:   add2.c
+        new file:   sub2.c
+
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (b1)
+$ git commit -m "2 files ceated from b1"
+[b1 4def392] 2 files ceated from b1
+ 2 files changed, 1 insertion(+)
+ create mode 100644 add2.c
+ create mode 100644 sub2.c
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (b1)
+$ git checkout b2
+Switched to branch 'b2'
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (b2)
+$ touch mul2.c
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (b2)
+$ touch div2.c
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (b2)
+$ git add .
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (b2)
+$ git commit -m "2 files ceated from b2"
+[b2 9d7e5b1] 2 files ceated from b2
+ 2 files changed, 0 insertions(+), 0 dele
+Merge branch 'b1' into b2
+
+
+
+
+
+
+
+
+
+
+
+
+
+hint: Waiting for your editor to close th
+Merge made by the 'ort' strategy.
+ add2.c | 0
+ sub2.c | 1 +
+ 2 files changed, 1 insertion(+)
+ create mode 100644 add2.c
+ create mode 100644 sub2.c
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (b2)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/ma
+in'.
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (main)
+$ git merge b2
+Updating 9d60c9e..e0580bc
+Fast-forward
+ add2.c | 0
+ div2.c | 0
+ mul2.c | 0
+ sub2.c | 1 +
+ 4 files changed, 1 insertion(+)
+ create mode 100644 add2.c
+ create mode 100644 div2.c
+ create mode 100644 mul2.c
+ create mode 100644 sub2.c
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (main)
+$ git log
+commit e0580bc99aff6146eb31c085cbfb80866f
+b83f2e (HEAD -> main, b2)
+Merge: 9d7e5b1 4def392
+Author: Prasannakumar1 <pkshivaraddi@gmai
+l.com>
+Date:   Wed Oct 29 16:00:02 2025 +0530
+
+    Merge branch 'b1' into b2
+
+commit 9d7e5b143110c4fc261165dde44733074c
+b1a60b
+Author: Prasannakumar1 <pkshivaraddi@gmai
+l.com>
+Date:   Wed Oct 29 15:59:23 2025 +0530
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (main)
+$
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (main)
+$ git push origin main
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (7/7), 689 bytes |
+689.00 KiB/s, done.
+Total 7 (delta 3), reused 0 (delta 0), pa
+ck-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), don
+e.
+To https://github.com/Prasannakumar1/Thir
+dsemc.git
+   9d60c9e..e0580bc  main -> main
+
+Admin@DESKTOP-HGNLPEA MINGW64 /d/StudentA/Thirdsemc (main)
+$
